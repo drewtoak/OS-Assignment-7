@@ -23,18 +23,21 @@ int main (int argc, char *argv[])
 	}
 
 	host = argv[1];
-	if ((clnt = clnt_create(host, RPC_PROG, RPC_VER, "tcp")) == (CLIENT*)NULL) {
+	if ((clnt = clnt_create(host, RPC_PROG, RPC_VER, "tcp")) == (CLIENT *) NULL) {
 		clnt_pcreateerror(host);
 		exit(EXIT_FAILURE);
 	}
+
+	struct response *ret_val;
+	int *ret_num;
 
 	struct message test;
 	strcpy(test.content, "hello");
 	test.ID = 7907;
 	printf("put is here\n");
-	put_1(&test, clnt);
 
-	get_1(10987, clnt);
+	ret_num = put_1(&test, clnt);
+	ret_val = get_1(10987, clnt);
 
 
 exit (0);
