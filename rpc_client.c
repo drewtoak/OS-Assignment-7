@@ -30,6 +30,7 @@ int main (int argc, char *argv[])
 
 	struct response *ret_val;
 	int *ret_num;
+	int filler;
 
 	struct message test;
 	strcpy(test.content, "hello");
@@ -37,7 +38,7 @@ int main (int argc, char *argv[])
 	printf("put is here\n");
 
 	ret_num = put_1(&test, clnt);
-	ret_val = get_1(10987, clnt);
+	ret_val = get_1((void *) filler, clnt);
 
 
 exit (0);
