@@ -9,7 +9,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-char *generate();
+#define MESSAGE_LEN 10
+
+char *generate_str();
 void _funcget();
 void _funcput();
 
@@ -37,7 +39,7 @@ int main (int argc, char *argv[]) {
 		int filler;
 
 		struct message test;
-		strcpy(test.content, "hello");
+		strcpy(test.content, generate_str);
 		test.ID = identifier;
 		printf("put is here\n");
 
@@ -54,7 +56,17 @@ int main (int argc, char *argv[]) {
 	exit (0);
 }
 
-char *generate() {
-	char *str = "abcdefghijklmnopqrstuvwxyz";
-	return str[(rand() % 26) + 1];
+char *generate_str() {
+	const charset[] = "abcdefghijklmnopqrstuvwxyz";
+	char *randomstr = NULL;
+
+	size_t size = MESSAGE_LEN - 1;
+	size_t i;
+	for (i = 0; i < size; i++) {
+		int key = rand() % (int) (sizeof(charset) - 1);
+		randomstr[i] = charset[key];
+	}
+	randomstr[size] = '\0';
+
+	return randomstr;
 }
