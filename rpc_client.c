@@ -75,10 +75,10 @@ int main (int argc, char *argv[]) {
 char *generate_str() {
  	const char charset[] = "abcdefghijklmnopqrstuvwxyz";
 	time_t val = time(NULL);
-	if (val == (time_t) -1) {
-		perror("Error getting time.");
-		exit(EXIT_FAILURE);
-	}
+	// if (val == (time_t) -1) {
+	// 	perror("Error getting time.");
+	// 	exit(EXIT_FAILURE);
+	// }
 	srand(val);
 
 	size_t size = MESSAGE_LEN - 1;
