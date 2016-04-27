@@ -55,8 +55,8 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 	// 	strcpy(result.content, messages[randomindex].content);
 	// }
 
-	printf("size of message\n", sizeof(messages[randomindex].content));
-	printf("size of null\n", sizeof(NULL));
+	printf("size of message %d\n", sizeof(messages[randomindex].content));
+	printf("size of null %d\n", sizeof(NULL));
 	if (sizeof(messages[randomindex].content) != sizeof(NULL)) {
 		printf("has message %d\n", 0);
 		result.status_code = 0;
