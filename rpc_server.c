@@ -27,14 +27,14 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	printf("Server had a put() request from client %d at time: %s.\n", client_id, current_local_time());
 	static int result;
 
-	if (argp->content == NULL) {
+	if (strcmp(argp->content, "") == 0) {
 		result = -1;
 		return &result;
 	}
 
 	messages[count].ID = client_id;
 	strcpy(messages[count].content, argp->content);
-	printf("For Client %d, put message: %s, random index: %d.\n\n", messages[count].ID, messages[count].content, count);
+	printf("For Client %d, put message: %s.\n", messages[count].ID, messages[count].content);
 
 	count++;
 	result = 0;
@@ -43,7 +43,7 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 
 struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 	int client_id = *argp;
-	printf("Server had a get() request from client %d at current local time: %s.\n", client_id, current_local_time());
+	printf("Server had a get() request from client %d at time: %s.\n", client_id, current_local_time());
 	static struct response result;
 	int randomindex = generate_num();
 
@@ -51,31 +51,39 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 		randomindex = generate_num()%count;
 	}
 
-	printf("Index %d message: %s\n", randomindex, messages[randomindex].content);
-
-	// if (strcmp(messages[randomindex].content, "")) {
-	// 	result.status_code = -1;
-	// 	strcpy(result.content, "");
-	// } else {
-	// 	result.status_code = 0;
-	// 	strcpy(result.content, messages[randomindex].content);
-	// }
-
-	result.status_code = 0;
-	strcpy(result.content, messages[randomindex].content);
+	if (strcmp(messages[randomindex].content, "") == 0) {
+		result.status_code = -1;
+		strcpy(result.content, "");
+	} else {
+		result.status_code = 0;
+		strcpy(result.content, messages[randomindex].content);
+	}
 
 	return &result;
 }
 
 char *current_local_time() {
 	time_t rawtime;
-	time (&rawtime);
+	time_t val = time(&rawtime);
+	if (val == (time_t) -1) {
+		perror("Error getting time.");
+		exit(EXIT_FAILURE);
+	}
 	char *current_time = ctime(&rawtime);
+	if (strcmp(current_time, NULL) == 0) {
+		perror("Error with ctime!");
+		exit(EXIT_FAILURE);
+	}
 	return current_time;
 }
 
 int generate_num() {
-	srand(time(NULL));
+	time_t val = time(NULL);
+	if (val == (time_t) -1) {
+		perror("Error getting time.");
+		exit(EXIT_FAILURE);
+	}
+	srand(val);
 	int r = rand()%count;
 	return r;
 }
