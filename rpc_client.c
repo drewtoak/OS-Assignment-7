@@ -36,7 +36,7 @@ int main (int argc, char *argv[]) {
 	printf("Client ID : %d.\n", identifier);
 	int i = 0;
 	while (i < 5) {
-		int ret_num;
+		int *ret_num;
 
 		struct message test;
 		char *message = generate_str();
@@ -44,11 +44,11 @@ int main (int argc, char *argv[]) {
 		test.ID = identifier;
 
 		ret_num = *put_1(&test, clnt);
-		if (ret_num == -1) {
+		if (*ret_num == -1) {
 			perror("Error putting message on server!");
 			exit(EXIT_FAILURE);
 		}
-		printf("Put returned %d\n", ret_num);
+		printf("Put returned %d\n", *ret_num);
 		i++;
 		sleep(1);
 	}

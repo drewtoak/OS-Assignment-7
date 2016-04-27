@@ -20,7 +20,7 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
 	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
 	int randomindex = generate_num();
-	int result;
+	static int result;
 
 	if (argp->content == NULL) {
 		result = -1;
