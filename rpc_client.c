@@ -40,7 +40,9 @@ int main (int argc, char *argv[]) {
 		int filler;
 
 		struct message test;
-		strcpy(test.content, generate_str());
+		char *message = generate_str();
+		printf("%s\n", message);
+		strcpy(test.content, message);
 		test.ID = identifier;
 		printf("put is here\n");
 
