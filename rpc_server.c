@@ -13,20 +13,31 @@
 
 char *current_local_time();
 
+char messages[9999999] = {{""}};
+
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
-	printf("Server | at current local time: %s, put() requested from client %d.\n", current_local_time(), argp->ID);
-	static int  result;
+	int client_id = argp->ID;
+	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
+	int result;
 
+	char *message = argp->content;
+	if (message == NULL) {
+		result = -1;
+		return result;
+	}
 
+	messages[client_id] = message;
+	printf("For Client %d, put message: %s\n", client_id, messages[client_id]);
 
-	return &result;
+	result = 0;
+	return result;
 }
 
-struct response *get_1_svc(int *argp, struct svc_req *rqstp)
-{
-	static struct response  result;
+struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
+	printf("Server had a get() request from client %d at current local time: %s.\n", argp->ID, current_local_time());
+	static struct response result;
 
-	printf("get is running on the server\n");
+
 
 	return &result;
 }
