@@ -13,13 +13,13 @@
 
 char *current_local_time();
 int generate_num();
+int count = 0;
 
 struct message messages[100] = {{"", 1}};
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
 	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
-	int randomindex = generate_num();
 	static int result;
 
 	if (argp->content == NULL) {
@@ -27,10 +27,11 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 		return &result;
 	}
 
-	messages[randomindex].ID = client_id;
-	strcpy(messages[randomindex].content, argp->content);
-	printf("For Client %d, put message: %s, random index: %d.\n\n", messages[randomindex].ID, messages[randomindex].content, randomindex);
+	messages[count].ID = client_id;
+	strcpy(messages[count].content, argp->content);
+	printf("For Client %d, put message: %s, random index: %d.\n\n", messages[count].ID, messages[count].content, count);
 
+	count++;
 	result = 0;
 	return &result;
 }
@@ -41,21 +42,24 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 	static struct response result;
 	int randomindex = generate_num();
 
-	while (messages[randomindex].ID == client_id) {
-		randomindex = generate_num()%100;
-	}
+	// while (messages[randomindex].ID == client_id) {
+	// 	randomindex = generate_num()%count;
+	// }
 
 	printf("Index %d message: %s\n", randomindex, messages[randomindex].content);
 
-	if (strcmp(messages[randomindex].content, "")) {
-		printf("empty message %d\n", -1);
-		result.status_code = -1;
-		strcpy(result.content, "");
-	} else {
-		printf("has message %d\n", 0);
-		result.status_code = 0;
-		strcpy(result.content, messages[randomindex].content);
-	}
+	// if (strcmp(messages[randomindex].content, "")) {
+	// 	printf("empty message %d\n", -1);
+	// 	result.status_code = -1;
+	// 	strcpy(result.content, "");
+	// } else {
+	// 	printf("has message %d\n", 0);
+	// 	result.status_code = 0;
+	// 	strcpy(result.content, messages[randomindex].content);
+	// }
+
+	result.status_code = 0;
+	strcpy(result.content, messages[randomindex].content);
 
 	return &result;
 }
@@ -69,6 +73,6 @@ char *current_local_time() {
 
 int generate_num() {
 	srand(time(NULL));
-	int r = rand()%(100 - 1);
+	int r = rand()%count;
 	return r;
 }
