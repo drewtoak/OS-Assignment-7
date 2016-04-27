@@ -14,7 +14,7 @@
 char *current_local_time();
 int generate_num();
 
-struct message messages[5] = {{"", 1}};
+message messages[5] = {{"", 1}};
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
