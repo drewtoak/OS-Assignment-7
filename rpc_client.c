@@ -68,7 +68,7 @@ char *generate_str() {
 
 	for (i = 0; i < size; i++) {
 		int key = rand() % (int) (sizeof(charset) - 1);
-		printf("here\n");
+		printf("key is %d\n", key);
 		randomstr[i] = charset[key];
 	}
 
