@@ -16,7 +16,7 @@ char *current_local_time();
 char messages[9999999][7999];
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
-	int client_id = argp.ID;
+	int client_id = argp->ID;
 	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
 	int result;
 
@@ -34,7 +34,7 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 }
 
 struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
-	printf("Server had a get() request from client %d at current local time: %s.\n", argp->ID, current_local_time());
+	printf("Server had a get() request from client %d at current local time: %s.\n", argp, current_local_time());
 	static struct response result;
 
 
