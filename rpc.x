@@ -10,7 +10,7 @@ struct response {
 
 program RPC_PROG {
   version RPC_VER {
-    struct response get(int) = 1;
-    int put(struct message) = 2;
+    int put(struct message) = 1;
+    struct response get(int) = 2;
   } = 1;
 } = 0x20000001;
