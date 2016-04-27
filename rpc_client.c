@@ -42,6 +42,7 @@ int main (int argc, char *argv[]) {
 		printf("put is here\n");
 
 		ret_num = put_1(&test, clnt);
+		i++;
 		sleep(1);
 	}
 
