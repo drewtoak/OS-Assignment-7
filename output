@@ -1,0 +1,161 @@
+-------
+SERVER:
+  Server had a put() request from client 20573 at time: Wed Apr 27 18:36:19 2016
+  .
+  For Client 20573, put message: didycgxbr.
+  Server had a put() request from client 20573 at time: Wed Apr 27 18:36:20 2016
+  .
+  For Client 20573, put message: jrlhvnggx.
+  Server had a put() request from client 7917 at time: Wed Apr 27 18:36:21 2016
+  .
+  For Client 7917, put message: gsgdanpdn.
+  Server had a put() request from client 20573 at time: Wed Apr 27 18:36:21 2016
+  .
+  For Client 20573, put message: gsgdanpdn.
+  Server had a put() request from client 7917 at time: Wed Apr 27 18:36:22 2016
+  .
+  For Client 7917, put message: kueuidchf.
+  Server had a put() request from client 20573 at time: Wed Apr 27 18:36:22 2016
+  .
+  For Client 20573, put message: kueuidchf.
+  Server had a put() request from client 5836 at time: Wed Apr 27 18:36:23 2016
+  .
+  For Client 5836, put message: kueuidchf.
+  Server had a put() request from client 7917 at time: Wed Apr 27 18:36:23 2016
+  .
+  For Client 7917, put message: mhqzcsyun.
+  Server had a put() request from client 20573 at time: Wed Apr 27 18:36:23 2016
+  .
+  For Client 20573, put message: mhqzcsyun.
+  Server had a put() request from client 5836 at time: Wed Apr 27 18:36:24 2016
+  .
+  For Client 5836, put message: mhqzcsyun.
+  Server had a put() request from client 7917 at time: Wed Apr 27 18:36:24 2016
+  .
+  For Client 7917, put message: rykffrvaq.
+  Server had a put() request from client 5836 at time: Wed Apr 27 18:36:25 2016
+  .
+  For Client 5836, put message: rykffrvaq.
+  Server had a put() request from client 7917 at time: Wed Apr 27 18:36:25 2016
+  .
+  For Client 7917, put message: tzjjvgjjy.
+  Server had a put() request from client 5836 at time: Wed Apr 27 18:36:26 2016
+  .
+  For Client 5836, put message: tzjjvgjjy.
+  Server had a put() request from client 5836 at time: Wed Apr 27 18:36:27 2016
+  .
+  For Client 5836, put message: edelopmbv.
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:29 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:31 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:31 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:32 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:33 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:34 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:36 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:37 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:38 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:38 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:47 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:48 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:49 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:49 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:50 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:51 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:53 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:54 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:54 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:55 2016
+  .
+  Server had a get() request from client 20573 at time: Wed Apr 27 18:36:55 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:56 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:57 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:36:58 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:36:59 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:37:00 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:37:01 2016
+  .
+  Server had a get() request from client 7917 at time: Wed Apr 27 18:37:01 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:37:02 2016
+  .
+  Server had a get() request from client 5836 at time: Wed Apr 27 18:37:05 2016
+  .
+------------------
+eecslinab3 CLIENT:
+  Client ID : 20573.
+  Client 20573 had a successful put call
+  Client 20573 had a successful put call
+  Client 20573 had a successful put call
+  Client 20573 had a successful put call
+  Client 20573 had a successful put call
+  Client 20573 got message: edelopmbv.
+  Client 20573 got message: rykffrvaq.
+  Client 20573 got message: kueuidchf.
+  Client 20573 got message: edelopmbv.
+  Client 20573 got message: tzjjvgjjy.
+  Client 20573 got message: mhqzcsyun.
+  Client 20573 got message: mhqzcsyun.
+  Client 20573 got message: rykffrvaq.
+  Client 20573 got message: kueuidchf.
+  Client 20573 got message: gsgdanpdn.
+------------------
+eecslinab2 CLIENT:
+  Client ID : 7917.
+  Client 7917 had a successful put call
+  Client 7917 had a successful put call
+  Client 7917 had a successful put call
+  Client 7917 had a successful put call
+  Client 7917 had a successful put call
+  Client 7917 got message: jrlhvnggx.
+  Client 7917 got message: gsgdanpdn.
+  Client 7917 got message: tzjjvgjjy.
+  Client 7917 got message: mhqzcsyun.
+  Client 7917 got message: kueuidchf.
+  Client 7917 got message: jrlhvnggx.
+  Client 7917 got message: didycgxbr.
+  Client 7917 got message: edelopmbv.
+  Client 7917 got message: kueuidchf.
+  Client 7917 got message: rykffrvaq.
+------------------
+eecslinab7 CLIENT:
+  Client ID : 5836.
+  Client 5836 had a successful put call
+  Client 5836 had a successful put call
+  Client 5836 had a successful put call
+  Client 5836 had a successful put call
+  Client 5836 had a successful put call
+  Client 5836 got message: kueuidchf.
+  Client 5836 got message: mhqzcsyun.
+  Client 5836 got message: mhqzcsyun.
+  Client 5836 got message: kueuidchf.
+  Client 5836 got message: jrlhvnggx.
+  Client 5836 got message: didycgxbr.
+  Client 5836 got message: kueuidchf.
+  Client 5836 got message: gsgdanpdn.
+  Client 5836 got message: mhqzcsyun.
+  Client 5836 got message: mhqzcsyun.
