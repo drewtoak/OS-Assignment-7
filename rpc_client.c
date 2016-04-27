@@ -49,7 +49,7 @@ int main (int argc, char *argv[]) {
 			exit(EXIT_FAILURE);
 		}
 
-		printf("Put returned %d\n", ret_num);
+		printf("Client %d had a successful put call\n", identifier);
 		i++;
 		sleep(1);
 	}
@@ -64,7 +64,7 @@ int main (int argc, char *argv[]) {
 			perror("Error got an empty message!");
 			exit(EXIT_FAILURE);
 		}
-		printf("Got message: %s.\n", ret_val->content);
+		printf("Client %d got message: %s.\n", identifier, ret_val->content);
 		i++;
 		sleep(1);
 	}
@@ -74,6 +74,7 @@ int main (int argc, char *argv[]) {
 
 char *generate_str() {
  	const char charset[] = "abcdefghijklmnopqrstuvwxyz";
+	srand(time(NULL));
 
 	size_t size = MESSAGE_LEN - 1;
 	char *randomstr = malloc(sizeof(char) * (size + 1));

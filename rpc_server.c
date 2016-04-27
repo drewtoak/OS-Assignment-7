@@ -53,18 +53,13 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 
 	printf("Index %d message: %s\n", randomindex, messages[randomindex].content);
 
-	// if (strcmp(messages[randomindex].content, "")) {
-	// 	printf("empty message %d\n", -1);
-	// 	result.status_code = -1;
-	// 	strcpy(result.content, "");
-	// } else {
-	// 	printf("has message %d\n", 0);
-	// 	result.status_code = 0;
-	// 	strcpy(result.content, messages[randomindex].content);
-	// }
-
-	result.status_code = 0;
-	strcpy(result.content, messages[randomindex].content);
+	if (strcmp(messages[randomindex].content, "")) {
+		result.status_code = -1;
+		strcpy(result.content, "");
+	} else {
+		result.status_code = 0;
+		strcpy(result.content, messages[randomindex].content);
+	}
 
 	return &result;
 }
