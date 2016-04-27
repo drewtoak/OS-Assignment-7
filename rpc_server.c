@@ -47,7 +47,7 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 
 	printf("message: %s\n", messages[randomindex].content);
 
-	if (strcmp(messages[randomindex].content, "") {
+	if (strcmp(messages[randomindex].content, "")) {
 		printf("empty message %d\n", -1);
 		result.status_code = -1;
 		strcpy(result.content, "");
