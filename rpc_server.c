@@ -13,7 +13,7 @@
 
 char *current_local_time();
 
-char messages[39999][7999];
+char *messages[39999];
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
