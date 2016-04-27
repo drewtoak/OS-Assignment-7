@@ -6,20 +6,20 @@
 
 #include "rpc.h"
 
-struct response *get_1_svc(int *argp, struct svc_req *rqstp)
-{
-	static struct response  result;
-
-	printf("get is running on the server\n");
-
-	return &result;
-}
-
 int *put_1_svc(struct message *argp, struct svc_req *rqstp)
 {
 	static int  result;
 
 	printf("put is running on the server\n");
+
+	return &result;
+}
+
+struct response *get_1_svc(int *argp, struct svc_req *rqstp)
+{
+	static struct response  result;
+
+	printf("get is running on the server\n");
 
 	return &result;
 }
