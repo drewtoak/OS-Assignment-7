@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 #define MESSAGE_LEN 10
 
@@ -57,7 +58,7 @@ int main (int argc, char *argv[]) {
 }
 
 char *generate_str() {
-	const charset[] = "abcdefghijklmnopqrstuvwxyz";
+ 	static charset[] = "abcdefghijklmnopqrstuvwxyz";
 	char *randomstr = NULL;
 
 	size_t size = MESSAGE_LEN - 1;
