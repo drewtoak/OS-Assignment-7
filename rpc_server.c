@@ -65,24 +65,12 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 char *current_local_time() {
 	time_t rawtime;
 	time_t val = time(&rawtime);
-	// if (val == (time_t) -1) {
-	// 	perror("Error getting time.");
-	// 	exit(EXIT_FAILURE);
-	// }
 	char *current_time = ctime(&rawtime);
-	// if (strcmp(current_time, NULL) == 0) {
-	// 	perror("Error with ctime!");
-	// 	exit(EXIT_FAILURE);
-	// }
 	return current_time;
 }
 
 int generate_num() {
 	time_t val = time(NULL);
-	// if (val == (time_t) -1) {
-	// 	perror("Error getting time.");
-	// 	exit(EXIT_FAILURE);
-	// }
 	srand(val);
 	int r = rand()%count;
 	return r;
