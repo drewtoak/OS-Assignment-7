@@ -24,7 +24,7 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	}
 
 	int client_id = argp->ID;
-	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
+	printf("Server had a put() request from client %d at time: %s.\n", client_id, current_local_time());
 	static int result;
 
 	if (argp->content == NULL) {
@@ -47,9 +47,9 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 	static struct response result;
 	int randomindex = generate_num();
 
-	// while (messages[randomindex].ID == client_id) {
-	// 	randomindex = generate_num()%count;
-	// }
+	while (messages[randomindex].ID == client_id) {
+		randomindex = generate_num()%count;
+	}
 
 	printf("Index %d message: %s\n", randomindex, messages[randomindex].content);
 
