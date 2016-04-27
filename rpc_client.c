@@ -58,7 +58,7 @@ int main (int argc, char *argv[]) {
 }
 
 char *generate_str() {
- 	static charset[] = "abcdefghijklmnopqrstuvwxyz";
+ 	const charset[] = "abcdefghijklmnopqrstuvwxyz";
 	char *randomstr = NULL;
 
 	size_t size = MESSAGE_LEN - 1;
