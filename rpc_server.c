@@ -29,7 +29,7 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 
 	messages[randomindex].ID = client_id;
 	strcpy(messages[randomindex].content, argp->content);
-	printf("For Client %d, put message: %s\n\n", messages[randomindex].ID, messages[randomindex].content);
+	printf("For Client %d, put message: %s, random index: %d.\n\n", messages[randomindex].ID, messages[randomindex].content, randomindex);
 
 	result = 0;
 	return &result;
@@ -45,7 +45,7 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 		randomindex = generate_num()%100;
 	}
 
-	printf("message: %s\n", messages[randomindex].content);
+	printf("Index %d message: %s\n", randomindex, messages[randomindex].content);
 
 	if (strcmp(messages[randomindex].content, "")) {
 		printf("empty message %d\n", -1);
