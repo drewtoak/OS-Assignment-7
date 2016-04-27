@@ -48,7 +48,7 @@ int main (int argc, char *argv[]) {
 	sleep(5);
 
 	struct response *ret_val;
-	ret_val = get_1((void *) filler, clnt);
+	ret_val = get_1((void *) identifier, clnt);
 	exit (0);
 }
 
