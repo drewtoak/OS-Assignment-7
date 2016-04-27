@@ -61,7 +61,7 @@ int main (int argc, char *argv[]) {
 	while (i < 10) {
 		ret_val = get_1(&identifier, clnt);
 		if (ret_val->status_code == -1) {
-			perror("Error got an empty message!")
+			perror("Error got an empty message!");
 			exit(EXIT_FAILURE);
 		}
 		printf("Got message: %s.\n", ret_val->content);
