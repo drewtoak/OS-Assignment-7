@@ -45,7 +45,7 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 		randomindex = generate_num()%100;
 	}
 
-	if (messages[randomindex].context == NULL) {
+	if (messages[randomindex].content == NULL) {
 		result.status_code = -1;
 	} else {
 		result.status_code = 0;
