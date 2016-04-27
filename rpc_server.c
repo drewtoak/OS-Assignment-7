@@ -20,7 +20,7 @@ struct message messages[100] = {{"", 1}};
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	if (count > 14) {
 		perror("Too many clients!");
-		exit(EXIT_FAILURE)
+		exit(EXIT_FAILURE);
 	}
 
 	int client_id = argp->ID;
