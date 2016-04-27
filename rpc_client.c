@@ -37,7 +37,7 @@ int main (int argc, char *argv[]) {
 		int filler;
 
 		struct message test;
-		strcpy(test.content, generate());
+		strcpy(test.content, "hello");
 		test.ID = identifier;
 		printf("put is here\n");
 
