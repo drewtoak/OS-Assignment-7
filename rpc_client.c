@@ -50,6 +50,7 @@ int main (int argc, char *argv[]) {
 
 	struct response *ret_val;
 	ret_val = get_1(&identifier, clnt);
+	printf("get ran.\n");
 	exit (0);
 }
 
