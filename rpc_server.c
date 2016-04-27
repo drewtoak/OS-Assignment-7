@@ -28,8 +28,8 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 		return &result;
 	}
 
-	messages[randomindex].content = message;
-	printf("For Client %d, put message: %s\n", client_id, messages[randomindex].content);
+	messages[randomindex]->content = message;
+	printf("For Client %d, put message: %s\n", client_id, messages[randomindex]->content);
 
 	result = 0;
 	return &result;
@@ -53,7 +53,7 @@ char *current_local_time() {
 }
 
 int generate_num() {
-	srand(time(NULL))
+	srand(time(NULL));
 	int r = rand()%(5 - 1);
 	return r;
 }
