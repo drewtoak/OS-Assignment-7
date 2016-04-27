@@ -61,17 +61,15 @@ int main (int argc, char *argv[]) {
 
 char *generate_str() {
  	const char charset[] = "abcdefghijklmnopqrstuvwxyz";
-	char *randomstr = NULL;
 
 	size_t size = MESSAGE_LEN - 1;
-	size_t i;
+	char *randomstr = malloc(sizeof(char) * (size + 1));
 
+	size_t i;
 	for (i = 0; i < size; i++) {
 		int key = rand() % (int) (sizeof(charset) - 1);
-		printf("key is %d\n", key);
 		randomstr[i] = charset[key];
 	}
-
 	randomstr[size] = '\0';
 
 	return randomstr;
