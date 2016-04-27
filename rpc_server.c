@@ -12,12 +12,14 @@
 #include "rpc.h"
 
 char *current_local_time();
+int generate_num();
 
-char *messages[39999];
+struct message messages[5] = {{"", 1}};
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
 	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
+	int randomindex = generate_num();
 	int result;
 
 	char *message = argp->content;
@@ -26,8 +28,8 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 		return &result;
 	}
 
-	messages[client_id] = message;
-	printf("For Client %d, put message: %s\n", client_id, messages[client_id]);
+	messages[randomindex].content = message;
+	printf("For Client %d, put message: %s\n", client_id, messages[randomindex].content);
 
 	result = 0;
 	return &result;
@@ -48,4 +50,10 @@ char *current_local_time() {
 	time (&rawtime);
 	char *current_time = ctime(&rawtime);
 	return current_time;
+}
+
+int generate_num() {
+	srand(time(NULL))
+	int r = rand()%(5 - 1);
+	return r;
 }
