@@ -6,6 +6,9 @@
 
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 #include "rpc.h"
 
 char *current_local_time();
