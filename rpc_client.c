@@ -57,7 +57,10 @@ int main (int argc, char *argv[]) {
 
 	struct response *ret_val;
 	ret_val = get_1(&identifier, clnt);
-	printf("get ran.\n");
+	// if (ret_val->status_code == -1) {
+	//
+	// }
+	printf("Got message: %s. Status Code: %d\n", ret_val->content, ret_val->status_code);
 	exit (0);
 }
 

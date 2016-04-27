@@ -14,7 +14,7 @@
 char *current_local_time();
 int generate_num();
 
-struct message messages[5] = {{"", 1}};
+struct message messages[100] = {{"", 1}};
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int client_id = argp->ID;
@@ -39,8 +39,19 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 	int client_id = *argp;
 	printf("Server had a get() request from client %d at current local time: %s.\n", client_id, current_local_time());
 	static struct response result;
+	int randomindex = generate_num();
 
+	while (messages[randomindex].ID == client_id) {
+		randomindex = generate_num()%100;
+	}
 
+	if (messages[randomindex].context == NULL) {
+		result.status_code = -1;
+	} else {
+		result.status_code = 0;
+	}
+
+	strcpy(result.content, messages[randomindex].content);
 
 	return &result;
 }
@@ -54,6 +65,6 @@ char *current_local_time() {
 
 int generate_num() {
 	srand(time(NULL));
-	int r = rand()%(5 - 1);
+	int r = rand()%(100 - 1);
 	return r;
 }
