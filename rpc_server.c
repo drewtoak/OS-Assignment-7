@@ -45,6 +45,8 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp) {
 		randomindex = generate_num()%100;
 	}
 
+	printf("random message: %s\n", messages[randomindex].content);
+
 	if (sizeof(messages[randomindex].content) == sizeof(NULL)) {
 		result.status_code = -1;
 		strcpy(result.content, "");
