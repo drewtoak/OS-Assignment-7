@@ -14,7 +14,7 @@
 char *current_local_time();
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
-	printf("Server: time: %d; Client ID: %d; put() request\n", current_local_time(), argp.ID);
+	printf("Server | at current local time: %s, put() requested from client %d.\n", current_local_time(), argp->ID);
 	static int  result;
 
 
