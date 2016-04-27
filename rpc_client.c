@@ -65,6 +65,8 @@ int main (int argc, char *argv[]) {
 			exit(EXIT_FAILURE);
 		}
 		printf("Got message: %s.\n", ret_val->content);
+		i++;
+		sleep(1);
 	}
 
 	exit (0);
