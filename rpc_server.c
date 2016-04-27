@@ -22,15 +22,13 @@ int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
 	int randomindex = generate_num();
 	int result;
 
-	char *message;
-	strcpy(message, argp->content);
-	if (message == NULL) {
+	if (argp->content == NULL) {
 		result = -1;
 		return &result;
 	}
 
 	messages[randomindex].ID = client_id;
-	strcpy(messages[randomindex].content, message);
+	strcpy(messages[randomindex].content, argp->content);
 	printf("For Client %d, put message: %s\n", client_id, messages[randomindex].content);
 
 	result = 0;
