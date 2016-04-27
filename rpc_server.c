@@ -18,6 +18,11 @@ int count = 0;
 struct message messages[100] = {{"", 1}};
 
 int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
+	if (count > 14) {
+		perror("Too many clients!");
+		exit(EXIT_FAILURE)
+	}
+
 	int client_id = argp->ID;
 	printf("Server had a put() request from client %d at current local time: %s.\n", client_id, current_local_time());
 	static int result;

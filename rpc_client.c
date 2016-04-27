@@ -34,11 +34,11 @@ int main (int argc, char *argv[]) {
 
 	int identifier = getpid();
 	printf("Client ID : %d.\n", identifier);
+	int ret_num;
+	struct message test;
+
 	int i = 0;
 	while (i < 5) {
-		int ret_num;
-
-		struct message test;
 		char *message = generate_str();
 		strcpy(test.content, message);
 		test.ID = identifier;
@@ -48,6 +48,7 @@ int main (int argc, char *argv[]) {
 			perror("Error putting message on server!");
 			exit(EXIT_FAILURE);
 		}
+
 		printf("Put returned %d\n", ret_num);
 		i++;
 		sleep(1);
@@ -56,11 +57,16 @@ int main (int argc, char *argv[]) {
 	sleep(5);
 
 	struct response *ret_val;
-	ret_val = get_1(&identifier, clnt);
-	// if (ret_val->status_code == -1) {
-	//
-	// }
-	printf("Got message: %s. Status Code: %d\n", ret_val->content, ret_val->status_code);
+	i = 0;
+	while (i < 10) {
+		ret_val = get_1(&identifier, clnt);
+		if (ret_val->status_code == -1) {
+			perror("Error got an empty message!")
+			exit(EXIT_FAILURE);
+		}
+		printf("Got message: %s.\n", ret_val->content);
+	}
+
 	exit (0);
 }
 
