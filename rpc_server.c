@@ -4,13 +4,17 @@
  * as a guideline for developing your own functions.
  */
 
+#include <stdio.h>
+#include <time.h>
 #include "rpc.h"
 
-int *put_1_svc(struct message *argp, struct svc_req *rqstp)
-{
+char *current_local_time();
+
+int *put_1_svc(struct message *argp, struct svc_req *rqstp) {
+	printf("Server: time: %d; Client ID: %d; put() request\n", current_local_time(), argp.ID);
 	static int  result;
 
-	printf("put is running on the server\n");
+
 
 	return &result;
 }
@@ -22,4 +26,11 @@ struct response *get_1_svc(int *argp, struct svc_req *rqstp)
 	printf("get is running on the server\n");
 
 	return &result;
+}
+
+char *current_local_time() {
+	time_t rawtime;
+	time (&rawtime);
+	char *current_time = ctime(&rawtime);
+	return current_time;
 }
