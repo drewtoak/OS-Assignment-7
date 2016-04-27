@@ -1,0 +1,27 @@
+Andrew Hwang ath50
+EECS 338: Assignment 7
+
+README:
+
+Files included in zip:
+  - rpc_client.c
+  - rpc_clnt.c
+  - rpc_server.c
+  - rpc_svc.c
+  - rpc_xdr.c
+  - rpc.h
+  - rpc.x
+  - client
+  - server
+  - Makefile
+  - output.txt
+
+How to Run:
+  - Got to eecslinab2 home directory
+  - In Terminal, cd into OS-Assignment7 directory.
+  - Call "make" to compile all files file.
+  - Call "ssh -f ath50@eecslinab3.case.edu "./Assignment7/OS-Assignment-7/server";
+          ssh -f ath50@eecslinab3.case.edu "./Assignment7/OS-Assignment-7/client localhost";
+          ssh -f ath50@eecslinab7.case.edu "./OS-Assignment-7/client eecslinab3";
+          ./OS-Assignment-7/client eecslinab3"
+          to run the server in eecslinab3 and run all three clients.
